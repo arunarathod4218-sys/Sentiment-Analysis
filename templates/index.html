@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sentiment Analysis</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>😊 Sentiment Analysis</h1>
+
+<form action="/predict" method="POST">
+
+<textarea name="review" placeholder="Enter Review..." required></textarea>
+
+<br><br>
+
+<button>Predict</button>
+
+</form>
+
+{% if result %}
+
+<h2>{{ result }}</h2>
+
+<p>{{ review }}</p>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
